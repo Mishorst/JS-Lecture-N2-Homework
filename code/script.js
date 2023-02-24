@@ -21,3 +21,21 @@ function returnMinAge(user) {
 }
 
 console.log(returnMinAge(user));
+
+// ფუნქცია იღებს ობიექტს და ახალ ობიექტში წერს ძველი ობიექტის მნიშვნელობებს
+function newObject(obj) {
+  const newObj = {};
+  for (let key in obj) {
+    newObj[key] = obj[key];
+  }
+  return newObj;
+}
+
+// ციკლი კითხულობს ერეის და უზრუნველყოფს ობიექტის გადაცემას ფუნქციისთვის, შემდეგ დაბრუნებულ ობიექტს კი ფუშავს ერეიში
+const newUsersArr = [];
+for (let i of user) {
+  let object = newObject(i);
+  newUsersArr.push(object);
+}
+
+console.log(newUsersArr);
